@@ -73,6 +73,8 @@ team:
     allow-friendly-fire: false
     # When enabled, teammates can see each other if using invisibility potion
     can-see-friendly-invisibles: true
+kill-commands:
+    - "points give <killer> 10"
 reward:
     # Whether players get a reward when the game is done!
     enabled: true

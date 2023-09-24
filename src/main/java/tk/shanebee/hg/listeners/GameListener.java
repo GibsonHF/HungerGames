@@ -227,7 +227,10 @@ public class GameListener implements Listener {
 					alive.playSound(alive.getLocation(), Sound.UI_TOAST_CHALLENGE_COMPLETE, 5, 1);
 				}
 			}
-
+			for (String command : Config.killCommands) {
+				String formattedCommand = command.replace("<killer>", damager.getName()).replace("<player>", player.getName());
+				Bukkit.dispatchCommand(Bukkit.getConsoleSender(), formattedCommand);
+			}
 			gamePlayerData.leave(player, true);
 			game.getGameCommandData().runCommands(CommandType.DEATH, player);
 

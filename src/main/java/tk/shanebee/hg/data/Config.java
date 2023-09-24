@@ -91,6 +91,8 @@ public class Config {
     public static boolean mcmmoUseSkills;
     public static boolean mcmmoGainExp;
 
+    public static List<String> killCommands;
+
     private final HG plugin;
     private File configFile;
     private FileConfiguration config;
@@ -144,9 +146,9 @@ public class Config {
 
         giveReward = config.getBoolean("reward.enabled");
         cash = config.getInt("reward.cash");
+        killCommands = config.getStringList("kill-commands");
         rewardCommands = config.getStringList("reward.commands");
         rewardMessages = config.getStringList("reward.messages");
-        giveReward = config.getBoolean("reward.enabled");
         cash = config.getInt("reward.cash");
         breakblocks = config.getBoolean("rollback.allow-block-break");
         blocks_per_second = config.getInt("rollback.blocks-per-second");

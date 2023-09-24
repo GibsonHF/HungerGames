@@ -313,17 +313,18 @@ public class Game {
         if (gameArenaData.status == Status.RUNNING) {
             bar.clearBar();
         }
-
         if (!win.isEmpty() && death) {
             double db = (double) Config.cash / win.size();
             for (UUID u : win) {
-                if (Config.giveReward) {
+
+                 {
                     Player p = Bukkit.getPlayer(u);
                     assert p != null;
                     if (!Config.rewardCommands.isEmpty()) {
                         for (String cmd : Config.rewardCommands) {
-                            if (!cmd.equalsIgnoreCase("none"))
+                            if (!cmd.equalsIgnoreCase("none")) {
                                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), cmd.replace("<player>", p.getName()));
+                            }
                         }
                     }
                     if (!Config.rewardMessages.isEmpty()) {
